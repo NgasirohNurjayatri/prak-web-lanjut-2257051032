@@ -13,7 +13,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+        background-color: #d2b48c;
     }
 
     .profile-container {
@@ -30,10 +30,10 @@
     }
 
     .profile-picture img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
-        border: 4px solid #90caf9;
+        border: 4px solid #d2b48c;
         display: block;
         margin: 0 auto;
     }
@@ -55,10 +55,11 @@
     </style>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-picture">
-        <img src="/assets/img/fotoevi.jpg" alt="">
-</div>
+<div class="profile-container">
+    <div class="profile-picture">
+        <img src="https://i.pinimg.com/originals/20/04/ea/2004ea445bed8d58a9ab9b6a338c9500.jpg" alt="Profil Kartun Wanita">
+    </div>
+    <div class="info">
 
         <div class="profile-info">
             <h1>Profil User</h1>
@@ -67,5 +68,6 @@
             <p>Kelas: {{ $nama_kelas ?? 'Kelas tidak ditemukan'}}</p>
         </div>
     </div>
+</div>
 </body>
 </html>

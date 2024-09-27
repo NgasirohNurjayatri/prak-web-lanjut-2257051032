@@ -26,7 +26,7 @@ public function create(){
     ]);
 }
 
-public function store(UserRequest $request)
+public function store(Request $request)
 {
     $validatedData = $request->validate([
         'nama' => 'required|string|max:255',
