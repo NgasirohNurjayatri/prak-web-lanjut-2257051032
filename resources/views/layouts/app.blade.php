@@ -88,6 +88,40 @@
             color: #000000; /* Warna teks */
         }
 
+        .btn {
+            display: inline-block;
+            background-color: #a5d6a7; 
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none; 
+            font-size: 14px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            float: left;
+        }
+
+        .btn-warning {
+            display: inline-block;
+            background-color: #4caf50; /* Hijau untuk tombol detail */
+            color: black;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none; /* Menghilangkan garis bawah */
+            font-size: 12px;
+            border-radius: 4px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        
+
     </style>
 </head>
 <body>

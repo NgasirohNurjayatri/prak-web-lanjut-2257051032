@@ -16,9 +16,9 @@ class Kelas extends Model
         return $this->hasMany(UserModel::class, 'kelas_id');
     }
 
-    protected $table = 'kelas';
+    protected $table = 'kelas' ;
 
-    public function getKelas(){
+    public function getKelas () {
         return $this->all();
     }
 }
