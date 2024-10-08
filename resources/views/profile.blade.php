@@ -44,7 +44,7 @@
     }
 
     .info-item {
-        background-color: #90caf9;
+        background-color: #d2b48c;
         color: #ffffff;
         padding: 10px 15px;
         border-radius: 5px;
@@ -55,19 +55,21 @@
     </style>
 </head>
 <body>
+
+       
+    
 <div class="profile-container">
-    <div class="profile-picture">
-        <img src="https://i.pinimg.com/originals/20/04/ea/2004ea445bed8d58a9ab9b6a338c9500.jpg" alt="Profil Kartun Wanita">
-    </div>
-    <div class="info">
+        <div class="profile-picture">
+            <!-- <img src="https://i.pinimg.com/originals/20/04/ea/2004ea445bed8d58a9ab9b6a338c9500.jpg" alt="Profil Kartun Wanita"> -->
+            <img src="{{ asset('img/' . $user->foto) }}" alt="Profile Picture" />
+        </div>
 
         <div class="profile-info">
-            <h1>Profil User</h1>
-            <p>Nama: {{ $nama }}</p>
-            <p>NPM: {{$npm}}</p>
-            <p>Kelas: {{ $nama_kelas ?? 'Kelas tidak ditemukan'}}</p>
+            <div class="info-item">Nama : {{ $user->nama }}</div>
+            <div class="info-item">NPM : {{ $user->npm }}</div>
+            <div class="info-item">Kelas : {{ $user->nama_kelas ?? 'Kelas tidak ditemukan' }}</div>
         </div>
     </div>
-</div>
+
 </body>
 </html>
