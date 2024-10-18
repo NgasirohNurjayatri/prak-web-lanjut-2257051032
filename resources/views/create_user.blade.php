@@ -2,6 +2,8 @@
 
 @section('content')
 <div>
+    <div class="container ">
+        <h1 class="text-center">Input Data</h1>
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nama">Nama:</label>

@@ -6,121 +6,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create User</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #d2b48c; /* Mengubah warna background menjadi coklat muda */
-        }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #d2b48c; /* Background coklat muda */
+    }
 
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .mb-3 {
+        margin-bottom: 15px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+    .mt-2 {
+        margin-top: 20px;
+    }
 
-        input[type="text"],
-        input[type="submit"],
-        select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+    form {
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
 
-        input[type="submit"] {
-            background-color: #90caf9;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-        input[type="submit"]:hover {
-            background-color: #80caf7;
-        }
-        
-        h2 {
-            text-align: center;
-        }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 
-        table {
-            width: 80%;
-            border-collapse: collapse; /* Menggabungkan border tabel dan cell */
-            margin: 20px auto; /* Pusatkan tabel */
-            background-color: #fff; /* Warna latar belakang tabel */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan di sekitar tabel */
-            border: 1px solid #000000; /* Garis di sekitar tabel */
-        }
+    input[type="text"],
+    input[type="submit"],
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-        th, td {
-            padding: 10px; /* Ruang di dalam sel */
-            text-align: center; /* Rata tengah secara horizontal */
-            vertical-align: middle; /* Rata tengah secara vertikal */
-            border: 1px solid #000000; /* Garis di sekitar setiap sel */
-        }
+    input[type="submit"] {
+        background-color: #90caf9;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
 
-        th {
-            background-color: #c8e6c9; /* Warna latar belakang header hijau muda */
-            color: #000000; /* Warna teks header */
-        }
+    input[type="submit"]:hover {
+        background-color: #80caf7;
+    }
 
-        tr:hover {
-            background-color: #f5f5f5; /* Efek hover untuk baris tabel */
-        }
+    h2 {
+        text-align: center;
+    }
 
-        td {
-            color: #000000; /* Warna teks */
-        }
+    /* Tombol tambah pengguna di atas tabel */
+    .btn-add {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        float: left; /* Ubah dari right ke left */
+        margin-bottom: 10px;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: #a5d6a7; 
-            color: black;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none; 
-            font-size: 14px;
-            margin: 10px 0;
-            cursor: pointer;
-            border-radius: 5px;
-            border: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            float: left;
-        }
+    .btn-add:hover {
+        background-color: #0069d9;
+    }
+    h1 {
+        text-align: center;  
+        margin-top: 20px;    
+        font-size: 24px;     
+        color: #333;         
+    }
 
-        .btn-warning {
-            display: inline-block;
-            background-color: #4caf50; /* Hijau untuk tombol detail */
-            color: black;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none; /* Menghilangkan garis bawah */
-            font-size: 12px;
-            border-radius: 4px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    /* Optional: Jika ingin memberi jarak lebih banyak di atas */
+    .container {
+        margin-top: 40px;    /* Memberi jarak lebih banyak dari atas */
+    }
 
-        
+
+
+    /* Styling tabel */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px; /* Jarak antara tombol dan tabel */
+        background-color: #fff; /* Latar belakang tabel */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan tabel */
+        border: 1px solid #000000; /* Garis di sekeliling tabel */
+    }
+
+    th, td {
+        padding: 10px; /* Ruang di dalam sel */
+        text-align: center; /* Rata tengah secara horizontal */
+        vertical-align: middle; /* Rata tengah secara vertikal */
+        border: 1px solid #000000; /* Garis di setiap sel */
+    }
+
+    th {
+        background-color: #c8e6c9; /* Latar belakang header hijau muda */
+        color: #000000; /* Warna teks header */
+    }
+
+    tr:hover {
+        background-color: #f5f5f5; /* Efek hover baris */
+    }
+
+    td {
+        color: #000000; /* Warna teks */
+    }
+
+    /* Tombol aksi di dalam tabel */
+    .btn {
+        display: inline-block;
+        padding: 5px 10px;
+        text-align: center;
+        font-size: 12px;
+        border-radius: 4px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Warna tombol edit */
+    .btn-edit {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-edit:hover {
+        background-color: #0069d9;
+    }
+
+    /* Warna tombol detail */
+    .btn-detail {
+        background-color: #ffc107;
+        color: white;
+    }
+
+    .btn-detail:hover {
+        background-color: #e0a800;
+    }
+
+    /* Warna tombol delete */
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+    td > .btn {
+        margin: 2px; /* Jarak antar tombol */
+    }
 
     </style>
 </head>
