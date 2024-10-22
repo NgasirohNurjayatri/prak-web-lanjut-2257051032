@@ -11,6 +11,9 @@
  
         <label for="npm">NPM : </label>
         <input type="text" id="npm" name="npm"><br>
+
+        <label for="foto">foto:</label>
+        <input type="file" id="foto" name="foto"><br><br>
         
         <label for="kelas">Kelas :</label>
          <select name="kelas_id" id="kelas_id" class="form-control">
@@ -19,8 +22,13 @@
             @endforeach
         </select>
         <br><br>
-        <label for="foto">foto:</label>
-        <input type="file" id="foto" name="foto"><br><br>
+
+        <label for="jurusan">Jurusan : </label>
+        <input type="text" id="jurusan" name="jurusan"><br>
+
+        <label for="semester">Semester : </label>
+        <input type="text" id="semester" name="semester"><br><br>
+
         <button type="submit">Submit</button>
     </form>
 </div>

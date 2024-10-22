@@ -14,19 +14,27 @@
         <label for="npm">NPM : </label>
         <input type="text" id="npm" name="npm" class="form-control" placeholder="Masukkan NPM" value="{{ old('npm', $user->npm) }}">
         
-        <label for="kelas">Kelas :</label>
+        <label for="foto" class="form-label">Foto</label>
+        <input class="form-control" type="file" id="foto" name="foto">
+        @if ($user->foto)
+        <img src="{{ asset('img/' . $user->foto) }}" alt="User Photo" width="100">
+    @endif
+
+    <label for="kelas">Kelas :</label>
         <select name="kelas_id" id="kelas_id">
             @foreach ($kelas as $kelasItem)
             <option value="{{ $kelasItem->id }}" {{ $kelasItem->id == $user->kelas_id ? 'selected' : '' }}>
                 {{ $kelasItem->nama_kelas }}</option>
             @endforeach
         </select>
-        <label for="foto" class="form-label">Foto</label>
-        <input class="form-control" type="file" id="foto" name="foto">
-        @if ($user->foto)
-        <img src="{{ asset('img/' . $user->foto) }}" alt="User Photo" width="100">
-    @endif
-        <button type="submit">Submit</button>
+        
+    <label for="jurusan">Jurusan : </label>
+    <input type="text" id="jurusan" name="jurusan"><br>
+
+    <label for="semester">Semester : </label>
+    <input type="text" id="semester" name="semester"><br><br>
+
+    <button type="submit">Submit</button>
     </form>
 </div>
 @endsection
