@@ -16,19 +16,7 @@
         background-color: #d2b48c; /* Background coklat muda */
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-    }
-
-    .mb-3 {
-        margin-bottom: 15px;
-    }
-
-    .mt-2 {
-        margin-top: 20px;
-    }
-
+    /* Form Styling */
     form {
         background: white;
         padding: 20px;
@@ -68,11 +56,25 @@
         background-color: #80caf7;
     }
 
-    h2 {
+    /* Heading */
+    h1, h2 {
         text-align: center;
+        margin-bottom: 20px;
+        color: #333;
     }
 
-    /* Tombol tambah pengguna di atas tabel */
+    /* Container utama */
+    .container {
+        margin-top: 30px;
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+
+    /* Tombol Tambah Pengguna */
+    .add-btn-container {
+        margin-bottom: 20px;
+    }
+
     .btn-add {
         background-color: #007bff;
         color: white;
@@ -83,58 +85,44 @@
         border-radius: 5px;
         display: inline-block;
         transition: background-color 0.3s ease;
-        float: left; /* Ubah dari right ke left */
         margin-bottom: 10px;
     }
 
     .btn-add:hover {
-        background-color: #0069d9;
-    }
-    h1 {
-        text-align: center;  
-        margin-top: 20px;    
-        font-size: 24px;     
-        color: #333;         
+        background-color: #0056b3;
     }
 
-    /* Optional: Jika ingin memberi jarak lebih banyak di atas */
-    .container {
-        margin-top: 40px;    /* Memberi jarak lebih banyak dari atas */
-    }
-
-
-
-    /* Styling tabel */
+    /* Tabel Styling */
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px; /* Jarak antara tombol dan tabel */
-        background-color: #fff; /* Latar belakang tabel */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan tabel */
-        border: 1px solid #000000; /* Garis di sekeliling tabel */
+        margin-top: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #000000;
     }
 
     th, td {
-        padding: 10px; /* Ruang di dalam sel */
-        text-align: center; /* Rata tengah secara horizontal */
-        vertical-align: middle; /* Rata tengah secara vertikal */
-        border: 1px solid #000000; /* Garis di setiap sel */
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #000000;
     }
 
     th {
-        background-color: #c8e6c9; /* Latar belakang header hijau muda */
-        color: #000000; /* Warna teks header */
+        background-color: #c8e6c9;
+        color: #000000;
     }
 
     tr:hover {
-        background-color: #f5f5f5; /* Efek hover baris */
+        background-color: #f5f5f5;
     }
 
     td {
-        color: #000000; /* Warna teks */
+        color: #000000;
     }
 
-    /* Tombol aksi di dalam tabel */
+    /* Tombol dalam tabel */
     .btn {
         display: inline-block;
         padding: 5px 10px;
@@ -147,7 +135,6 @@
         transition: background-color 0.3s ease;
     }
 
-    /* Warna tombol edit */
     .btn-edit {
         background-color: #007bff;
         color: white;
@@ -157,7 +144,6 @@
         background-color: #0069d9;
     }
 
-    /* Warna tombol detail */
     .btn-detail {
         background-color: #ffc107;
         color: white;
@@ -167,7 +153,6 @@
         background-color: #e0a800;
     }
 
-    /* Warna tombol delete */
     .btn-delete {
         background-color: #dc3545;
         color: white;
@@ -178,7 +163,83 @@
     }
 
     td > .btn {
-        margin: 2px; /* Jarak antar tombol */
+        margin: 2px;
+    }
+
+    /* Card Layout */
+    .card {
+        margin: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: white;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card-img-top {
+        width: 95%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        margin-right: 10px;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    /* Layout grid untuk card */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .col-md-4 {
+        flex: 0 0 calc(33.333% - 30px);
+        max-width: calc(33.333% - 30px);
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .col-md-4 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
     }
 
     </style>
