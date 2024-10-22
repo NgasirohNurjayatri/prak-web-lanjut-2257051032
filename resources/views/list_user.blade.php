@@ -3,32 +3,37 @@
 @section ('content')
 
 <div class="container">
-        <h1 class="text-center">List Data</h1>
+    <h1 class="text-center">List Data</h1>
+    
     <div class="mb-3 mt-2">
         <a href="{{ route('user.create') }}" class="btn btn-add">Tambah Pengguna Baru</a>
-    </div>
+    </div>   
 
-    <table>
+    {{-- <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nama</th>
                 <th>NPM</th>
-                <th>Kelas</th>
                 <th>Foto</th>
+                <th>Kelas</th>
+                <th>Jurusan</th>
+                <th>Semester</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($kelas as $user) { ?>
+            @foreach ($kelas as $user)
             <tr>
-                <td><?= $user['id'] ?></td>
-                <td><?= $user['nama'] ?></td>
-                <td><?= $user['npm'] ?></td>
-                <td><?= $user['nama_kelas'] ?></td>
+                <td>{{ $user['id'] }}</td>
+                <td>{{ $user['nama'] }}</td>
+                <td>{{ $user['npm'] }}</td>
+                <td>{{ $user['nama_kelas'] }}</td>
                 <td>
-                    <img src="{{asset('img/'. $user->foto)}}" alt="Foto User" width="100">
+                    <img src="{{ asset('img/'. $user->foto) }}" alt="Foto User" width="100">
                 </td>
+                <td>{{ $user['jurusan'] }}</td>
+                <td>{{ $user['semester'] }}</td>
                 <td>
                     <a href="{{ route('user.edit', $user['id']) }}" class="btn btn-edit btn-sm">Edit</a>
                     <a href="{{ route('users.show', $user->id) }}" class="btn btn-detail btn-sm">Detail</a>
@@ -39,10 +44,27 @@
                     </form>
                 </td>
             </tr>
-            <?php } ?>
+            @endforeach
         </tbody>
-    </table>
-</div>
+    </table><br><br> --}}
 
+    <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        @foreach ($kelas as $user)
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('img/'. $user->foto) }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>{{ $user->nama }}</strong></h5>
+                    <p class="card-text">
+                        NPM: {{ $user->npm }}<br>
+                        Kelas: {{ $user->nama_kelas }}<br>
+                        Jurusan: {{ $user->jurusan }}<br>
+                        Semester: {{ $user->semester }}
+                    </p>
+                    <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary btn-sm">Detail</a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
 
 @endsection

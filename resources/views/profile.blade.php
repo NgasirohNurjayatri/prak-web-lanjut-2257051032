@@ -68,6 +68,8 @@
             <div class="info-item">Nama : {{ $user->nama }}</div>
             <div class="info-item">NPM : {{ $user->npm }}</div>
             <div class="info-item">Kelas : {{ $user->nama_kelas ?? 'Kelas tidak ditemukan' }}</div>
+            <div class="info-item">Jurusan : {{ $user->jurusan }}</div>
+            <div class="info-item">Semester : {{ $user->semester }}</div>
         </div>
     </div>
 
